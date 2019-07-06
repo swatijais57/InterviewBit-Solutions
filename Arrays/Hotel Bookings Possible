@@ -1,0 +1,25 @@
+/*A hotel manager has to process N advance bookings of rooms for the next season. His hotel has K rooms. 
+Bookings contain an arrival date and a departure date. He wants to find out whether there are enough rooms in the hotel to satisfy the demand.
+Write a program that solves this problem in time O(N log N) .
+
+*/
+bool Solution::hotel(vector<int> &arrive, vector<int> &depart, int K) {
+    int count=0,n;
+    n=K;
+    sort(arrive.begin(),arrive.end());
+    sort(depart.begin(),depart.end());
+    for(int i=0; i<arrive.size();i++)
+    {   for(int j=0;j<i;j++)
+        {    if(K>0 || arrive[i]>=depart[j])
+            { K--;
+            count++;
+            break;
+            }
+        }
+    }
+    //cout<<count<<endl;
+    if(count>n)
+    return 0;
+    else 
+    return 1;
+    }
