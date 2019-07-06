@@ -21,3 +21,19 @@ int Solution::repeatedNumber(const vector<int> &A) {
   }
   return slow;
   }
+/*
+/* vector<int> v(A.size());
+fill(v.begin(), v.end(), true);
+
+for(int i=0;i<A.size();i++){
+if(v[A[i]]){
+v[A[i]]=false;
+}
+
+else
+return A[i];
+}
+*/
+=> for the above code, it was a good approach but memory lmt exceeded as the question requires specific time and space.
+=> also given that if no duplicate occurs return -1 can never exist since the length of array is n+1 and distinct elements it can have in from 1 to n so by default there has to be atleast one duplicate.
+*/
